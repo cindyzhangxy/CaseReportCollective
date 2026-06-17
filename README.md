@@ -85,9 +85,15 @@ See `docs/artifact_inventory.md` for required local artifacts and instructions f
 * The dataset is intended for research use and should not be used for clinical decision-making.
 
 ## Citation
-
-[BioNLP 2025 citation]
-
+```
+@inproceedings{zhang2025casereportcollective,
+  title={CaseReportCollective: A Large-Scale LLM-Extracted Dataset for Structured Medical Case Reports},
+  author={Zhang, Xiao Yu Cindy and Fong, Melissa and Wasserman, Wyeth and Zhu, Jian},
+  booktitle={Proceedings of the 24th Workshop on Biomedical Language Processing},
+  pages={249--262},
+  year={2025}
+}
+```
 ## License
 
 Structured annotations are released under CC BY 4.0.
