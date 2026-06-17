@@ -1,6 +1,8 @@
 [![Paper](https://img.shields.io/badge/Paper-BioNLP%202025-blue)](https://aclanthology.org/2025.bionlp-1.22/)
 [![Dataset](https://img.shields.io/badge/Dataset-HuggingFace-yellow?logo=huggingface)](https://huggingface.co/datasets/cxyzhang/CaseReportCollective_V1.0)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+[![Code License: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 
 # CaseReportCollective
 
