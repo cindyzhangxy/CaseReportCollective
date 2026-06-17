@@ -1,3 +1,7 @@
+[![BioNLP 2025(https://aclanthology.org/2025.bionlp-1.22/)]
+[![Hugging Face Dataset]([...](https://huggingface.co/datasets/cxyzhang/CaseReportCollective_V1.0))]
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC--BY--NC--4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+
 # CaseReportCollective
 
 CaseReportCollective is a large-scale dataset of 85,961 open-access medical case reports automatically structured using large language models (LLMs). The dataset was introduced in:
