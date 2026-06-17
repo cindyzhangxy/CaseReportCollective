@@ -1,94 +1,95 @@
 # CaseReportCollective
 
-CaseReportCollective is a large-scale, LLM-structured dataset of open-access medical case reports used in the BioNLP 2025 paper:
+CaseReportCollective is a large-scale dataset of 85,961 open-access medical case reports automatically structured using large language models (LLMs). The dataset was introduced in:
 
-**CaseReportCollective: A Large-Scale LLM-Extracted Dataset for Structured Medical Case Reports**
+**Zhang XYC, Wasserman W, Fong M, Zhu J. CaseReportCollective: A Large-Scale LLM-Extracted Dataset for Structured Medical Case Reports. BioNLP 2025.**
 
-The dataset contains structured extractions across 14 clinical categories, diagnostic labels, demographic attributes, and analysis artifacts for dataset characterization and embedding-based retrieval experiments.
+## Overview
 
-## Dataset
+Medical case reports contain rich clinical narratives describing rare, unusual, and diagnostically challenging conditions. However, their free-text format limits large-scale computational analysis.
 
-The paper dataset is published on Hugging Face:
+CaseReportCollective converts these narratives into structured clinical representations across 14 patient-assessment categories, enabling biomedical information extraction, retrieval, demographic analysis, and clinical NLP research.
+
+### Key Statistics
+
+| Metric                | Value       |
+| --------------------- | ----------- |
+| Total case reports    | 85,961      |
+| Publication years     | 1986–2023   |
+| Average report length | 3,462 words |
+| Clinical categories   | 14          |
+| Female cases          | 55.6%       |
+| Male cases            | 44.1%       |
+| Intersex cases        | 0.1%        |
+
+## Dataset Access
+
+The dataset is available on Hugging Face:
 
 `cxyzhang/CaseReportCollective_V1.0`
 
-Earlier intermediate datasets used during analysis were named `pmc_llmExtraction_v7`, `pmc_llmExtraction_v8`, `pmc_llmExtraction_v9`, and `pmc_llmExtraction_v10`. The final paper-facing table corresponds to the `v10` schema:
+Each record contains:
 
-```text
-pmcid, publication_year, age, sex, topic, title, case, case_length,
-Vitals_Hema, Pregnancy, Neuro, CVS, RESP, EENT, GI, GU, DERM,
-MSK, ENDO, LYMPH, History, Lab_Image
-```
+* PMCID
+* Publication year
+* Age group
+* Biological sex
+* Diagnostic topic
+* Article title
+* Structured clinical findings
+* Clinical category extractions
 
-Large local artifacts are intentionally not stored in Git. See [docs/artifact_inventory.md](docs/artifact_inventory.md) for the expected local files and how they map to manuscript sections.
+## Clinical Categories
 
-## Repository Layout
+* Vitals_Hema
+* EENT
+* Neuro
+* CVS
+* RESP
+* GI
+* GU
+* MSK
+* DERM
+* LYMPH
+* ENDO
+* Pregnancy
+* Lab_Image
+* History
 
-```text
-DatasetEDA/Dataset_EDA.ipynb          Extraction quality and category-count analysis
-notebooks/Demographics_Topic_EDA.ipynb Demographics, publication year, and topic analyses
-notebooks/pool_mean_embeddings.ipynb   MedEmbed embedding generation
-notebooks/faiss_retrieval.ipynb        FAISS retrieval and IR metric analysis
-function.py                            Shared preprocessing helpers
-scripts/check_artifacts.py             Local artifact availability check
-scripts/summarize_human_eval.py        Human-evaluation summary from annotation CSV
-docs/artifact_inventory.md             Required non-Git artifacts
-```
+## Repository Contents
 
-## Setup
+This repository contains the code used for:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+* Dataset characterization
+* Demographic analyses
+* Extraction-quality evaluation
+* Embedding generation
+* Retrieval experiments
 
-For embedding generation, use a CUDA-capable environment if available. The retrieval notebook can run from precomputed embedding artifacts.
+The primary notebooks are:
 
-## Reproducing Paper Analyses
+* DatasetEDA/Dataset_EDA.ipynb
+* notebooks/Demographics_Topic_EDA.ipynb
+* notebooks/pool_mean_embeddings.ipynb
+* notebooks/faiss_retrieval.ipynb
 
-1. Restore the non-Git artifacts listed in [docs/artifact_inventory.md](docs/artifact_inventory.md).
-2. Confirm artifact availability:
+## Reproducing the Paper
 
-```bash
-python scripts/check_artifacts.py --root .
-```
+See `docs/artifact_inventory.md` for required local artifacts and instructions for reproducing the analyses reported in the paper.
 
-3. Run dataset extraction quality analysis:
+## Limitations
 
-```bash
-jupyter notebook DatasetEDA/Dataset_EDA.ipynb
-```
+* Structured fields were automatically generated using LLMs and may contain extraction errors.
+* Diagnostic labels are not manually curated.
+* Case reports are subject to publication and reporting biases.
+* The dataset is intended for research use and should not be used for clinical decision-making.
 
-4. Run demographics and topic analysis:
+## Citation
 
-```bash
-jupyter notebook notebooks/Demographics_Topic_EDA.ipynb
-```
+[BioNLP 2025 citation]
 
-5. Generate or restore embeddings:
+## License
 
-```bash
-jupyter notebook notebooks/pool_mean_embeddings.ipynb
-```
+Structured annotations are released under CC BY 4.0.
 
-6. Run FAISS retrieval evaluation:
-
-```bash
-jupyter notebook notebooks/faiss_retrieval.ipynb
-```
-
-## Manuscript Figure Mapping
-
-| Manuscript output | Source notebook | Expected artifact |
-| --- | --- | --- |
-| Extraction EM and TSR by category | `DatasetEDA/Dataset_EDA.ipynb` | `graphs/exact match percentage per category.pdf`, `graphs/tokensetratio.pdf` |
-| Extracted string counts by category | `DatasetEDA/Dataset_EDA.ipynb` | `graphs/Dataset_EDA_Extractions_PerCategory.pdf` |
-| Publication year and sex distribution | `notebooks/Demographics_Topic_EDA.ipynb` | `graphs/sex distribution over pub yrs.pdf` |
-| Sex distribution by age group | `notebooks/Demographics_Topic_EDA.ipynb` | `graphs/sex distribution over age groups.pdf` |
-| Sex distribution over top topics | `notebooks/Demographics_Topic_EDA.ipynb` | `graphs/sex distribution over top 20 medical conditions.pdf` |
-| IR metrics by frequency group | `notebooks/faiss_retrieval.ipynb` | `graphs/mean_IR.pdf` |
-
-## Notes
-
-The notebooks were used for the paper analyses and retain exploratory cells. For a production workflow, the next step is to convert the main notebook paths into parameterized Python scripts.
+Original case reports remain subject to the licenses associated with their source articles in PubMed Central Open Access.
