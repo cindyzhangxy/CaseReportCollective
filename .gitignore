@@ -63,9 +63,7 @@ raw/
 intermediate/
 private/
 human_evaluation/
-_recycle*/
 .gitdir/
-CaseReportCollective_repo_tmp/
 
 # Generated analysis outputs
 graphs/
@@ -84,14 +82,11 @@ slurm_job_container/
 *.sh
 
 # Exploratory work not part of the BioNLP paper release
-past_attempts/
+exploratory/
 legacy/
 scratch/
 tmp/
-umap*.ipynb
-*gender_bias*
-*MI_Sex_Discrepancy*
-*mito_eda*
-*mesh*
-*ppts*
-Presentation*
+visualization_experiments/
+demographic_subanalysis/
+topic_mapping_experiments/
+presentations/

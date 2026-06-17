@@ -1,13 +1,6 @@
 # Artifact Inventory
 
-Large data files, generated figures, local Hugging Face dataset snapshots, and embedding arrays are excluded from Git. This file records the artifacts used by the BioNLP 2025 analysis workspace.
-
-The original local source workspace was:
-
-```text
-C:\phd\bioNLP2025
-/mnt/c/phd/bioNLP2025
-```
+Large data files, generated figures, local Hugging Face dataset snapshots, and embedding arrays are excluded from Git. This file records the expected project-relative artifacts used by the BioNLP 2025 analyses.
 
 ## Dataset Snapshots
 
@@ -78,11 +71,10 @@ graphs/mean_IR.pdf
 
 ## Human Evaluation
 
-The private analysis workspace includes:
+The private annotation artifact, if available, should be placed at:
 
 ```text
 human_evaluation/human_evaluated_labels.csv
-appendix/Human Evaluation Guidelines for LLM.docx
 ```
 
 The CSV observed locally contains 399 non-header rows. The manuscript text says 400 evaluated labels, so this count should be reconciled before final archival release.
