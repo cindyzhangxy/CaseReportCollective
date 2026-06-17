@@ -1,0 +1,97 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local environments
+.env
+.env.*
+.venv/
+venv/
+env/
+
+# Credentials, tokens, and local machine configuration
+*.pem
+*.key
+*.pub
+*.p12
+*.pfx
+*.crt
+*.csr
+*.kdb
+*.jks
+id_rsa*
+id_ed25519*
+known_hosts
+credentials*
+*credential*
+*credentials*
+*secret*
+*secrets*
+*token*
+*tokens*
+api_key*
+apikey*
+*.auth
+*.netrc
+.netrc
+.huggingface/
+.cache/huggingface/
+.wandb/
+wandb/
+.npmrc
+.pypirc
+.boto
+.aws/
+.azure/
+.gcloud/
+config.local.*
+local_config.*
+settings.local.*
+
+# Large local data/artifacts.
+# These are documented in docs/artifact_inventory.md and should be restored
+# from Hugging Face or local/release artifacts, not committed to Git.
+data/
+artifacts/
+output/
+pmc_llmExtraction_v*/
+embeddings/
+category_texts/
+category_pmcids/
+raw/
+intermediate/
+private/
+human_evaluation/
+_recycle*/
+.gitdir/
+CaseReportCollective_repo_tmp/
+
+# Generated analysis outputs
+graphs/
+*.pdf
+*.pptx
+*.pptm
+*.docx
+*.xlsx
+*.tex
+*.jsonl
+*.arrow
+*.zip
+
+# Raw/slurm scratch
+slurm_job_container/
+*.sh
+
+# Exploratory work not part of the BioNLP paper release
+past_attempts/
+legacy/
+scratch/
+tmp/
+umap*.ipynb
+*gender_bias*
+*MI_Sex_Discrepancy*
+*mito_eda*
+*mesh*
+*ppts*
+Presentation*
