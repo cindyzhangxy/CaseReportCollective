@@ -98,8 +98,16 @@ See `docs/artifact_inventory.md` for required local artifacts and instructions f
   year={2025}
 }
 ```
-## License
+## Licensing
 
-Structured annotations are released under CC BY 4.0.
+### Repository Code
+
+All code, scripts, and notebooks in this repository are released under the MIT License.
+
+### Dataset
+
+The CaseReportCollective structured annotations are released under CC BY-NC 4.0.
+
+### Source Articles
 
 Original case reports remain subject to the licenses associated with their source articles in PubMed Central Open Access.
