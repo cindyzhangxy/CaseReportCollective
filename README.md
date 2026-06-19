@@ -7,7 +7,7 @@
 
 CaseReportCollective is a large-scale dataset of 85,961 open-access medical case reports automatically structured using large language models. The dataset was introduced in:
 
-**Zhang XYC, Wasserman W, Fong M, Zhu J. CaseReportCollective: A Large-Scale LLM-Extracted Dataset for Structured Medical Case Reports. BioNLP 2025.**
+**Zhang XY, Fong M, Wasserman W, Zhu J. CaseReportCollective: A Large-Scale LLM-Extracted Dataset for Structured Medical Case Reports. InProceedings of the 24th Workshop on Biomedical Language Processing 2025 Aug (pp. 249-262).**
 
 ## Overview
 
